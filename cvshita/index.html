@@ -48,7 +48,30 @@
   .navbar-nav  li a:hover {
       color: #1abc9c !important;
   }
+
+  /* ---------------------------------------------- /*
+ * Skill-bars
+/* ---------------------------------------------- */
+
+.skill-bar {
+  background: #C4C4C4;
+  display: table;
+  height: 4px;
+  width: 100%;
+  margin: 10px -2px 20px -2px;
+}
+
+.skill-bar .skill-rate-on {
+  background: #353535;
+}
+
+.skill-rate-on, .skill-rate-off {
+  display: table-cell;
+  border-left: 2px solid #FFF;
+  border-right: 2px solid #FFF;
+}
   </style>
+ <link href="bootstrap.min.css" rel="stylesheet" media="screen"> 
 </head>
 <body>
 
@@ -61,15 +84,15 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#">Me</a>
+      <a class="navbar-brand" href="#">Noor Shita</a>
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
+    <!--<div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">Home</a></li>
         <li><a href="#">My Resume</a></li>
         <li><a href="#">My projects</a></li>
       </ul>
-    </div>
+    </div>-->
   </div>
 </nav>
 
@@ -82,10 +105,11 @@
 
 <!-- Second Container -->
 <div class="container-fluid bg-2 text-center">
-  <h3 class="margin">I am a Business Information Systems Student</h3>
-  <p>Currently I am a full time student at Universiti Teknologi Petronas </p>
+  <h3 class="margin">About Me</h3>
+  <p>Currently Full Time Student at Universiti Teknologi Petronas | Bachelor in Business Information System</p>
+  <p>Major in Knowledge Management | Minor in Financial Management</p>
   <a href="#" class="btn btn-default btn-lg">
-    <span class="glyphicon glyphicon-search"></span> More About Me
+    <span class="glyphicon glyphicon-info-sign"></span> Download My Resume
   </a>
 </div>
 
@@ -94,40 +118,118 @@
   <h3 class="margin">Some of My Projects</h3><br>
   <div class="row">
     <div class="col-sm-4">
-      <p>Project 1</p>
-      <img src="birds1.jpg" class="img-responsive margin" style="width:100%" alt="Image">
+      <p>Online Shawl Store</p>
+      <img src="img/1.jpg" class="img-responsive margin" style="width:100%" alt="Project1">
     </div>
     <div class="col-sm-4"> 
-      <p>Project 2</p>
-      <img src="birds2.jpg" class="img-responsive margin" style="width:100%" alt="Image">
+      <p>UTP Appointment Booking System</p>
+      <img src="img/2.jpg" class="img-responsive margin" style="width:100%" alt="Project2">
     </div>
     <div class="col-sm-4"> 
       <p>Project 3</p>
-      <img src="birds3.jpg" class="img-responsive margin" style="width:100%" alt="Image">
+      <img src="birds3.jpg" class="img-responsive margin" style="width:100%" alt="Project3">
     </div>
   </div>
 </div>
 
 <!--additional container-->
 <div class="container-fluid bg-1 text-center">
-  <h3 class="margin">My Skills</h3><br>
-    HTML<br>
+  <h3 class="margin">Language Proficiency</h3><br>
     <div class="progress">
-      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
-      HTML
+      <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:98%">
+      Bahasa Melayu
       </div>
     </div>
     <div class="progress">
-      <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:70%">
-      Finance
+      <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:80%">
+      English
       </div>
-    </div>    
+    </div>
+    <div class="progress">
+      <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:60%">
+      Arabic
+      </div>
+    </div>
+    <div class="progress">
+      <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:50%">
+      Korean
+      </div>
+    </div>            
+</div>
+<div class="container-fluid bg-3">
+  <center><h2>Skill Set</h2></center>
+            <div class="profile-widget">
 
+              <h3>Management Skill</h3>
+              <h5>Communication</h5>
+              <div class="skill-bar">
+                <div class="skill-rate-on"></div>
+                <div class="skill-rate-on"></div>
+                <div class="skill-rate-on"></div>
+                <div class="skill-rate-off"></div>
+              </div>
+              <h5>Punctuality</h5>
+              <div class="skill-bar">
+                <div class="skill-rate-on"></div>
+                <div class="skill-rate-on"></div>
+                <div class="skill-rate-on"></div>
+                <div class="skill-rate-on"></div>
+              </div>
+              <h5>Team Player</h5>
+              <div class="skill-bar">
+                <div class="skill-rate-on"></div>
+                <div class="skill-rate-on"></div>
+                <div class="skill-rate-on"></div>
+                <div class="skill-rate-off"></div>
+              </div>
+              <h5>Problem Solver</h5>
+              <div class="skill-bar">
+                <div class="skill-rate-on"></div>
+                <div class="skill-rate-on"></div>
+                <div class="skill-rate-off"></div>
+                <div class="skill-rate-off"></div>
+              </div>
+              <br>
+              <h3>Technical Skill</h3>
+              <h5>UI Design</h5>
+              <div class="skill-bar">
+                <div class="skill-rate-on"></div>
+                <div class="skill-rate-off"></div>
+                <div class="skill-rate-off"></div>
+                <div class="skill-rate-off"></div>
+              </div>
+
+              <h5>Networking</h5>
+              <div class="skill-bar">
+                <div class="skill-rate-on"></div>
+                <div class="skill-rate-on"></div>
+                <div class="skill-rate-off"></div>
+                <div class="skill-rate-off"></div>
+              </div>
+
+              <h5>Software Design & Planning</h5>
+              <div class="skill-bar">
+                <div class="skill-rate-on"></div>
+                <div class="skill-rate-on"></div>
+                <div class="skill-rate-on"></div>
+                <div class="skill-rate-off"></div>
+              </div>
+
+              <h5>wireless</h5>
+              <div class="skill-bar">
+                <div class="skill-rate-on"></div>
+                <div class="skill-rate-off"></div>
+                <div class="skill-rate-off"></div>
+                <div class="skill-rate-off"></div>
+              </div>
+            </div>
 </div> 
 
 <!-- Footer -->
 <footer class="container-fluid bg-4 text-center">
-  <p>Shita</p> 
+  <p>Contact Me</p>
+   <p><span class="glyphicon glyphicon-envelope"></span> shitaazizan@gmail.com </p>
+   <p><span class="glyphicon glyphicon-earphone"></span> 013-4180280 </p>
 </footer>
 
 </body>
