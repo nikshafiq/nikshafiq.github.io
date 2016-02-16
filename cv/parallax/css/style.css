@@ -11,8 +11,9 @@
 .pull-left {float:left;}
 .pull-right {float:right;}
 
-.container {width:1024px; height:768px; overflow:hidden; position:relative; margin:50px auto; border:10px solid #0B292D; background:#000;}
-.background {background:url(../images/huge_bg.jpg); width:1024px; height:768px; }
+.container {width:1500px; height:600px; overflow:hidden; position:relative; margin:1px auto; border:0px }
+/*.background {background:url(../images/huge_bg.jpg); width:1024px; height:768px; }*/
+.background { background-color: #ffffff; width:1200px; height:600px; }
 
 .layer div {position:absolute;}
 .kurama{top:-100px; left:-150px;}
@@ -21,3 +22,6 @@
 .landscape{top:500px; left:-250px;}
 .grass{top:700px; left:-250px;} 
 .leaves{top:350px; left:0px;}
+.a1 {top: 100px; left: 70px;}
+.b2 {top: 370px; right: 45px;}
+.c3 {top: 375px; right: 150px;}

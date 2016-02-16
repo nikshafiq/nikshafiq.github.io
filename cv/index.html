@@ -15,6 +15,9 @@
       line-height: 1.8;
       color: #f5f6f7;
   }
+
+  h4 { color: #1abc9c !important; }
+
   p {font-size: 16px;}
   .margin {margin-bottom: 45px;}
   .bg-1 { 
@@ -35,7 +38,7 @@
   }
 
   .contain {  padding-top: 10px;
-              padding-bottom: 10px;
+              
             }
 
   .container-fluid {
@@ -140,6 +143,57 @@
   </div>
 </div>
 
+<section class="container" background-color:"#2f2f2f">
+    <ul id="scene" class="scene">
+      <li class="layer" data-depth="0.00">
+      <div class="background"></div>
+      </li>
+      
+      <li class="layer" data-depth="0.50">
+      <div class="a1"><img src="parallax/pic/a1.png" height="300" width="300"></div>
+      </li>
+      
+      <li class="layer" data-depth="0.40">
+      <div class="b2"><img src="parallax/pic/b2.png" height="80" width="900"/></div>
+      </li>
+      
+      <li class="layer" data-depth="0.70">
+      <div class="c3"><img src="parallax/pic/c2.png" height="50" width="400" /></div>
+      </li>
+     <!-- 
+      <li class="layer" data-depth="1.20">
+      <div class="obito"><img src="parallax/images/obito.png"></div>
+      </li>
+      
+      <li class="layer" data-depth="1.00">
+      <div class="minato"><img src="parallax/images/minato.png"></div>
+      </li>
+      
+      <li class="layer" data-depth="2.30">
+      <div class="leaves"><img src="parallax/images/leaves.png"></div>
+      </li>
+    -->
+    </ul>
+</section>
+
+<script src="parallax/js/jquery-1.10.2.min.js"></script>
+<script src="parallax/js/jquery.parallax.min.js"></script>
+
+<script type="text/javascript">
+  $(function(){
+    $('#scene').parallax();
+  });
+</script>
+
+
+<div class="container-fluid bg-2">
+  <center><h3 class="margin">Subject Taken</h3></center>
+  <center><h4>Foundation Study</h4></center>
+  <p>Business Management | Principles of Economics | English 1 | Pre-Calculus | Intro to Business Information System | Linear Programming & Calculus | Fundamental of Programming 1 | Modern Music | Islamic Studies | Thinking Skills | English 2 | Gamelan | Fundamental of Programming 2</p>
+  <center><h4>Undergraduate Study</h4></center>
+  <p>Ethnic Relationship | TITAS | Intro to Oil & Gas Idustry and Sustainable Development | Discrete Mathematics | Structured Programming | Computer Organization | Algorithm & Data Structure | Data & Information Management | Systems Analysis & Design | HSE | Data Communication & Networking | Drama & Theatre | Academic Writing | Human Computer Interaction | Operating Systems | Web Application Development | Object-oriented Programming | Silat Olahraga | Software Engineering | Professional Communication Skills | Strategic Management | Statistics & Empirical Method | Wireless Technology | Basic Korean Communication | Corporate Communication | Business & Cyber Law | Dakwah in Malaysia | Distributed Computing | Network Security | IT Project Management</p>
+</div>  
+
 <!--additional container-->
 <div class="container-fluid bg-1 text-center">
   <h3 class="margin">Language Proficiency</h3><br>
@@ -231,48 +285,7 @@
                 <div class="skill-rate-off"></div>
               </div>
             </div>
-</div>
-
-<section class="container clearfix">
-    <ul id="scene" class="scene">
-      <li class="layer" data-depth="0.00">
-      <div class="background"></div>
-      </li>
-      
-      <li class="layer" data-depth="0.60">
-      <div class="kurama"><img src="parallax/images/kurama.png"></div>
-      </li>
-      
-      <li class="layer" data-depth="0.40" data-invert-y="false">
-      <div class="landscape"><img src="parallax/images/landscape.png" /></div>
-      </li>
-      
-      <li class="layer" data-depth="0.60">
-      <div class="grass"><img src="parallax/images/grass.png" /></div>
-      </li>
-      
-      <li class="layer" data-depth="1.20">
-      <div class="obito"><img src="parallax/images/obito.png"></div>
-      </li>
-      
-      <li class="layer" data-depth="1.00">
-      <div class="minato"><img src="parallax/images/minato.png"></div>
-      </li>
-      
-      <li class="layer" data-depth="2.30">
-      <div class="leaves"><img src="parallax/images/leaves.png"></div>
-      </li>
-    </ul>
-</section>
-
-<script src="parallax/js/jquery-1.10.2.min.js"></script>
-<script src="parallax/js/jquery.parallax.min.js"></script>
-
-<script type="text/javascript">
-  $(function(){
-    $('#scene').parallax();
-  });
-</script> 
+</div> 
 
 <!-- Footer -->
 <footer class="container-fluid bg-4 text-center">
