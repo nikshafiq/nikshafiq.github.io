@@ -1,225 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <title>My Online Resume</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <link rel="stylesheet" href="parallax/css/style.css">
-  <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <style>
-  body {
-      font: 20px Montserrat, sans-serif;
-      line-height: 1.8;
-      color: #f5f6f7;
-  }
+<style>
+/*basic reset*/
+* {margin: 0; padding: 0;}
+/*adding a black bg to the body to make things clearer*/
+body {background: black;}
+canvas {display: block;}
+</style>
 
-  h4 { color: #1abc9c !important; }
+<script>
+var c = document.getElementById("c");
+var ctx = c.getContext("2d");
 
-  p {font-size: 16px;}
-  .margin {margin-bottom: 45px;}
-  .bg-1 { 
-      background-color: #1abc9c; /* Green */
-      color: #ffffff;
-  }
-  .bg-2 { 
-      background-color: #474e5d; /* Dark Blue */
-      color: #ffffff;
-  }
-  .bg-3 { 
-      background-color: #f2f2f2; /* White */
-      color: #555555;
-  }
-  .bg-4 { 
-      background-color: #2f2f2f; /* Black Gray */
-      color: #fff;
-  }
+//making the canvas full screen
+c.height = window.innerHeight;
+c.width = window.innerWidth;
 
-  .bgb {
-      background-color: #000000; /*black*/
-      color: #32cd32;
-  }
+//chinese characters - taken from the unicode charset
+var chinese = "田由甲申甴电甶男甸甹町画甼甽甾甿畀畁畂畃畄畅畆畇畈畉畊畋界畍畎畏畐畑";
+//converting the string into an array of single characters
+chinese = chinese.split("");
 
-  .contain {  padding-top: 10px;
-              
-            }
+var font_size = 10;
+var columns = c.width/font_size; //number of columns for the rain
+//an array of drops - one per column
+var drops = [];
+//x below is the x coordinate
+//1 = y co-ordinate of the drop(same for every drop initially)
+for(var x = 0; x < columns; x++)
+  drops[x] = 1; 
 
-  .container-fluid {
-      padding-top: 70px;
-      padding-bottom: 70px;
+//drawing the characters
+function draw()
+{
+  //Black BG for the canvas
+  //translucent BG to show trail
+  ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+  ctx.fillRect(0, 0, c.width, c.height);
+  
+  ctx.fillStyle = "#0F0"; //green text
+  ctx.font = font_size + "px arial";
+  //looping over drops
+  for(var i = 0; i < drops.length; i++)
+  {
+    //a random chinese character to print
+    var text = chinese[Math.floor(Math.random()*chinese.length)];
+    //x = i*font_size, y = value of drops[i]*font_size
+    ctx.fillText(text, i*font_size, drops[i]*font_size);
+    
+    //sending the drop back to the top randomly after it has crossed the screen
+    //adding a randomness to the reset to make the drops scattered on the Y axis
+    if(drops[i]*font_size > c.height && Math.random() > 0.975)
+      drops[i] = 0;
+    
+    //incrementing Y coordinate
+    drops[i]++;
   }
-  .navbar {
-      padding-top: 8px;
-      padding-bottom: 8px;
-      border: 0;
-      border-radius: 0;
-      margin-bottom: 0;
-      font-size: 14px;
-      font-family: handel gothic;
-  }
-  .navbar-nav  li a:hover {
-      color: #1abc9c !important;
-  }
-
-  /* ---------------------------------------------- /*
- * Skill-bars
-/* ---------------------------------------------- */
-
-.skill-bar {
-  background: #C4C4C4;
-  display: table;
-  height: 4px;
-  width: 100%;
-  margin: 10px -2px 20px -2px;
 }
-
-.skill-bar .skill-rate-on {
-  background: #353535;
-}
-
-.skill-rate-on, .skill-rate-off {
-  display: table-cell;
-  border-left: 2px solid #FFF;
-  border-right: 2px solid #FFF;
-}
-  </style>
- <link href="bootstrap.min.css" rel="stylesheet" media="screen"> 
+</script>
 </head>
+
 <body>
-
-<!-- Navbar -->
-<nav class="navbar navbar-default">
-  <div class="contain">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#">Nik Shafiq</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">My Resume</a></li>
-        <li><a href="#">My projects</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<!-- First Container -->
-<div class="container-fluid bgb ">
-  <img src="parallax/pic/c.png" class="img-responsive img-circle margin" style="display:inline" alt="me" width="350" height="350">
-  <h2>Testing</h2>
- 
-
-<!--language container-->
-
-  <h3 class="margin">Language Proficiency</h3><br>
-    <div class="progress">
-      <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:98%">
-      Bahasa Melayu
-      </div>
-    </div>
-    <div class="progress">
-      <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:90%">
-      English
-      </div>
-    </div>
-    <div class="progress">
-      <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:60%">
-      Arabic
-      </div>
-    </div>
-    <div class="progress">
-      <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:50%">
-      Korean
-      </div>
-    </div> 
-    <div class="progress">
-      <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:30%">
-      Spanish
-      </div>
-    </div>           
-</div>
-<div class="container-fluid bg-3">
-  <center><h2>Skill Set</h2></center>
-            <div class="profile-widget">
-
-              <h3>Management Skill</h3>
-              <h5>Communication</h5>
-              <div class="skill-bar">
-                <div class="skill-rate-on"></div>
-                <div class="skill-rate-on"></div>
-                <div class="skill-rate-on"></div>
-                <div class="skill-rate-off"></div>
-              </div>
-              <h5>Punctuality</h5>
-              <div class="skill-bar">
-                <div class="skill-rate-on"></div>
-                <div class="skill-rate-on"></div>
-                <div class="skill-rate-on"></div>
-                <div class="skill-rate-on"></div>
-              </div>
-              <h5>Team Player</h5>
-              <div class="skill-bar">
-                <div class="skill-rate-on"></div>
-                <div class="skill-rate-on"></div>
-                <div class="skill-rate-on"></div>
-                <div class="skill-rate-off"></div>
-              </div>
-              <h5>Problem Solver</h5>
-              <div class="skill-bar">
-                <div class="skill-rate-on"></div>
-                <div class="skill-rate-on"></div>
-                <div class="skill-rate-on"></div>
-                <div class="skill-rate-off"></div>
-              </div>
-              <br>
-              <h3>Technical Skill</h3>
-              <h5>UI Design</h5>
-              <div class="skill-bar">
-                <div class="skill-rate-on"></div>
-                <div class="skill-rate-on"></div>
-                <div class="skill-rate-on"></div>
-                <div class="skill-rate-off"></div>
-              </div>
-
-              <h5>Networking</h5>
-              <div class="skill-bar">
-                <div class="skill-rate-on"></div>
-                <div class="skill-rate-on"></div>
-                <div class="skill-rate-off"></div>
-                <div class="skill-rate-off"></div>
-              </div>
-
-              <h5>Software Design & Planning</h5>
-              <div class="skill-bar">
-                <div class="skill-rate-on"></div>
-                <div class="skill-rate-on"></div>
-                <div class="skill-rate-on"></div>
-                <div class="skill-rate-on"></div>
-              </div>
-
-              <h5>wireless</h5>
-              <div class="skill-bar">
-                <div class="skill-rate-on"></div>
-                <div class="skill-rate-off"></div>
-                <div class="skill-rate-off"></div>
-                <div class="skill-rate-off"></div>
-              </div>
-            </div>
-</div> 
-
-<!-- Footer -->
-<footer class="container-fluid bg-4 text-center">
-  <p>Contact Me</p>
-   <p><span class="glyphicon glyphicon-envelope"></span> nik.shafiq95@gmail.com </p>
-   <p><span class="glyphicon glyphicon-earphone"></span> 013-4982001 </p>
-</footer>
-
+<canvas id="c"></canvas>
 </body>
 </html>
